@@ -1,25 +1,14 @@
 package main
 
 import (
-	"log"
+	"ce_grader_backend/environment"
 
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 )
 
-func init() {
-	LoadEnvVariables()
-	//database.Init()
-}
-
-func LoadEnvVariables() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-}
-
 func main() {
+	environment.LoadEnvVariables()
+
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
