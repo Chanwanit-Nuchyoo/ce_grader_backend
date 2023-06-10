@@ -12,14 +12,16 @@ func main() {
 
 	db.AutoMigrate(
 		&models.Class{},
+		&models.ClassLabStatus{},
 		&models.ClassMemberRole{},
-		&models.Class_Lab_Status{},
 		&models.Course{},
 		&models.Lab{},
 		&models.LabProblem{},
+		&models.LabProblemSubmission{},
+		&models.Post{},
 		&models.Testcase{},
+		&models.TestcaseSubmission{},
 		&models.Topic{},
-		&models.Topic_File_Mat{},
-		&models.User{},
+		&models.TopicFileMat{},
 	)
 }
